@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -34,10 +36,11 @@
     "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "node-sass": "^8.0.0"
   },
   "bugs": {
     "url": "https://github.com/Sandjai/todos/issues"
   },
-  "homepage": "https://github.com/Sandjai/todos#readme"
+  "homepage": "https://github.com/Sandjai/todos"
 }
