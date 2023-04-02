@@ -29,6 +29,74 @@ body
     &__header
         margin-bottom: 20px
 
+    &__item
+        margin: 9px 0px
+
+    &__wrapper
+        height: 435px
+        overflow-y: scroll
+        overflow-x: hidden
+.item__label
+
+    &:hover
+        color: $white!important
+        transition: color .3s ease-out
+
+    &:not(.item__label_completed):hover
+        color: $salmon!important
+        transition: color .3s ease-out
+
+.item
+    position: relative
+
+    &__text
+        display: block
+        &_completed>label
+            text-decoration: line-through
+            color: $marengo-light!important
+    &__checkbox
+        position: absolute
+        z-index: -1
+        opacity: 0
+        top: 50%
+        transform: translateY(-50%)
+
+        &:checked+.item__text>label::before
+            background-color: $salmon
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMzg0NjIgMTAuNjE1NEM0LjI4MjA1IDEwLjYxNSA0LjE4MDY0IDEwLjU5MzEgNC4wODY2OSAxMC41NTA5QzMuOTkyNzQgMTAuNTA4NyAzLjkwODI3IDEwLjQ0NzIgMy44Mzg1MiAxMC4zNzAxTDAuMjAyNzggNi40MDc2OEMwLjA2Njg3MTQgNi4yNTkzIC0wLjAwNTkzNDQyIDYuMDYxNjcgMC4wMDAzNzg4NDYgNS44NTgyOUMwLjAwMzUwNDg2IDUuNzU3NTkgMC4wMjU5NjExIDUuNjU4NSAwLjA2NjQ2NTMgNS41NjY2OEMwLjEwNjk3IDUuNDc0ODcgMC4xNjQ3MjggNS4zOTIxMyAwLjIzNjQ0NCA1LjMyMzE4QzAuMzA4MTYgNS4yNTQyNCAwLjM5MjQyOSA1LjIwMDQ0IDAuNDg0NDM5IDUuMTY0ODZDMC41NzY0NDggNS4xMjkyOCAwLjY3NDM5NyA1LjExMjYyIDAuNzcyNjkzIDUuMTE1ODJDMC45NzEyMSA1LjEyMjI5IDEuMTU5MDkgNS4yMDkyOSAxLjI5NSA1LjM1NzY3TDQuMzc3MTQgOC43MjIzTDEwLjY2ODYgMS42NzExNUMxMC43MzI1IDEuNTg5NjkgMTAuODExOSAxLjUyMjQ3IDEwLjkwMiAxLjQ3MzYxQzEwLjk5MjEgMS40MjQ3NSAxMS4wOTExIDEuMzk1MjggMTEuMTkyNyAxLjM4NzAyQzExLjI5NDQgMS4zNzg3NSAxMS4zOTY2IDEuMzkxODYgMTEuNDkzMSAxLjQyNTU1QzExLjU4OTYgMS40NTkyMyAxMS42Nzg0IDEuNTEyNzcgMTEuNzU0IDEuNTgyODlDMTEuODI5NiAxLjY1MzAxIDExLjg5MDQgMS43MzgyMSAxMS45MzI3IDEuODMzMjhDMTEuOTc1IDEuOTI4MzUgMTEuOTk3OCAyLjAzMTI2IDExLjk5OTkgMi4xMzU3MUMxMi4wMDE5IDIuMjQwMTYgMTEuOTgzMSAyLjM0MzkzIDExLjk0NDUgMi40NDA2NUMxMS45MDYgMi41MzczNyAxMS44NDg2IDIuNjI1MDEgMTEuNzc1OCAyLjY5ODE2TDQuOTM4MjEgMTAuMzYyNUM0Ljg2OTEyIDEwLjQ0MDkgNC43ODQ5NCAxMC41MDM5IDQuNjkwOTYgMTAuNTQ3NEM0LjU5Njk4IDEwLjU5MDkgNC40OTUyMyAxMC42MTQxIDQuMzkyMTEgMTAuNjE1NEg0LjM4NDYyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==")
+
+    &__text>label
+        display: inline-flex
+        align-items: center
+        user-select: none
+        cursor: pointer
+        font-family: Montserrat-Medium, sans-serif
+        font-size: 16px
+        color: $white
+        position: relative
+        padding-left: 35px
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0px
+            display: inline-block
+            flex-shrink: 0
+            flex-grow: 0
+            width: 20px
+            height: 20px
+            background-color: $marengo-light
+            border-radius: 6px
+            margin-right: 15px
+            background-repeat: no-repeat
+            background-position: center center
+
+    &__description
+        padding-left: 35px
+        font-family: Montserrat-Regular, sans-serif
+        font-size: 12px
+        color: $marengo-light
 .header
     display: flex
     flex-direction: row

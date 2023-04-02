@@ -1,0 +1,18 @@
+mixin todoItem(todo)
+
+    li.todos__item.item
+        input.item__checkbox(
+                type='checkbox'
+                value='on'
+                name=todo.id                    
+                id=todo.id
+                checked= todo.status==='completed' ? true : false
+                class= "item__checkbox" 
+                ) 
+        .item__text(
+            class=todo.status==='completed' && "item__text_completed")
+            label.item__label(     
+                class=todo.status==='completed' && "item__label_completed"       
+                for=todo.id)=todo.label
+            .item__description=todo.description
++todoItem(todo)
