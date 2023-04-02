@@ -15,6 +15,32 @@ body
     justify-content: center
     align-items: center
     position: relative
+    &::before
+        content: ""
+        background: radial-gradient(50% 50% at 50% 50%, #252E42 0%, #161C2E 100%)
+        position: fixed
+        top: 0px
+        right: 0px
+        width: 100vw
+        height: 100vh
+        z-index: -5
+        animation: 1.5s infinite alternate gradient
+
+    &::after
+        content: ""
+        background: radial-gradient(35.13% 50% at 50% 50%, #252E42 0%, #161C2E 100%)
+        position: fixed
+        top: 0px
+        right: 0px
+        width: 100vw
+        height: 100vh
+        z-index: -6
+
+@keyframes gradient
+    from
+        opacity: 1
+    to
+        opacity: 0
 
 .todos
     width: 420px
@@ -48,7 +74,7 @@ body
 
 .item
     position: relative
-
+    padding: 4.5px 0px
     &__text
         display: block
         &_completed>label
@@ -125,10 +151,36 @@ body
         line-height: 20px
         letter-spacing: 0em
 
-.content__copyright
-    margin-top: 31px
-    text-align: center
+.content
+    &__dummyList1, &__dummyList2
+        position: absolute
+        top: calc((100vh - 595px)/2 - 15px)
+        right: calc((100vw - 375px)/2 - 15px)
+        width: 400px
+        height: 540px
+        border-radius: 20px
+        transform: rotate(-2.32deg)
 
+    &__dummyList1
+        top: calc((100vh - 595px)/2 - 15px)
+        right: calc((100vw - 375px)/2 - 12px)
+        background: linear-gradient(180deg, $purplish-blue 0%, $gentian-blue 100%)
+        border-radius: 20px
+        transform: rotate(-2.32deg)
+        z-index: 1
+
+    &__dummyList2
+        width: 341.86px
+        top: calc((100vh - 595px)/2 - 30px)
+        right: calc((100vw - 322px)/2 + 10px)
+        background: linear-gradient(180deg, $marengo-light 0%, $black 53.65%)
+        border-radius: 20px
+        transform: rotate(-4.48deg)
+        z-index: 0
+
+    &__copyright
+        margin-top: 31px
+        text-align: center
 // scrollBar
 ::-webkit-scrollbar-track
     background-color: transparent
