@@ -1,9 +1,68 @@
+@import './fonts'
+@import './variables'
+
 *,
 *::before,
 *::after
     box-sizing: border-box
     margin: 0px
     padding: 0px
+
 body
-    background: #000
-    color: #ffffff
+    height: 100vh
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+
+.todos
+    width: 420px
+    height: 540px
+    background-color: $cobalt-blue
+    padding: 30px 30px 0px 30px
+    border-top-left-radius: 20px
+    z-index: 2
+    border-bottom-right-radius: 40px
+    position: relative
+
+    &__header
+        margin-bottom: 20px
+
+.header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-itmens: center
+    .header__title
+        font-family: Montserrat-Bold, sans-serif
+        color: $white
+    &__button
+        padding: 5px 10px
+        background-color: $salmon
+        font-family: Montserrat-Medium, sans-serif
+        font-size: 14px
+        text-transform: uppercase
+        color: $white
+        border-radius: 7px
+        &:hover
+            background-color: $salmon-red
+            cursor: pointer
+
+.copyright
+    p
+        color: $marengo
+        font-family: Montserrat-Medium
+        font-size: 16px
+        line-height: 20px
+        letter-spacing: 0em
+
+.content__copyright
+    margin-top: 31px
+    text-align: center
+
+@media only screen and (min-width:1120px)
+    .todos
+        .header__title
+            font-size: 28px
+            line-height: 34.13px

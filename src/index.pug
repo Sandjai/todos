@@ -7,5 +7,11 @@ html(lang="ru")
     meta(content="yes" name="apple-mobile-web-app-capable")
     title= htmlWebpackPlugin.options.title
   body
-    p='Hello World'
-
+    section.content
+      .todos
+        .todos__header.header
+          h1.header__title Todo list
+          .header__button add
+        #js-list
+      .content__copyright.copyright
+        p © 2022. Author Name
