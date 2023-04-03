@@ -10,11 +10,9 @@
     padding: 0px
 
 body
-
     width: 100%
     display: flex
     justify-content: center
-    align-items: center
     position: relative
     &::before
         content: ""
@@ -73,6 +71,17 @@ body
         height: 435px
         overflow-y: scroll
         overflow-x: hidden
+        // scrollBar
+    ::-webkit-scrollbar-track
+        background-color: transparent
+
+    ::-webkit-scrollbar
+        width: 4px
+        border-radius: 10px
+
+    ::-webkit-scrollbar-thumb
+        border-radius: 10px
+        background-color: $salmon
 
 .item
     position: relative
@@ -179,14 +188,3 @@ body
     &__copyright
         margin-top: 31px
         text-align: center
-// scrollBar
-::-webkit-scrollbar-track
-    background-color: transparent
-
-::-webkit-scrollbar
-    width: 4px
-    border-radius: 10px
-
-::-webkit-scrollbar-thumb
-    border-radius: 10px
-    background-color: $salmon
